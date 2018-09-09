@@ -8,14 +8,21 @@ class Habit extends Component {
   render() {
     return (
       <div>
+        <ul>
         {this.props.habits.map((habit, index) => {
-            return (
-              <HabitName key={habit[index]} habits={habit} />
-                )
-          })}
+          return (
+            <li key={habit[index]}>
+              <HabitCountButton />
+              <HabitName habits={habit} />
+            </li>
+          )
+        })}
+        </ul>
       </div>
     )
   }
 }
 
 export default Habit;
+
+// each time someone clicks on the button

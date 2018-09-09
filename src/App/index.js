@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import HabitInput from "../HabitInput";
+import Habit from "../Habit";
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class App extends Component {
           onChange={this.handleChange} 
           value={this.state.habitInput}
         />
+        <Habit habits={this.state.habits} />
       </div>
     )
   }

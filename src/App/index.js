@@ -3,6 +3,7 @@ import "./style.css";
 import HabitInput from "../HabitInput";
 import Habit from "../Habit";
 import Nav from "../Nav";
+import Awards from "../Awards";
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +55,9 @@ class App extends Component {
             />
             <Habit habits={this.state.habits} />
           </div>
+        )}
+        {this.state.currentPanel === 'awards' && (
+          <Awards />
         )}
 
       </div>

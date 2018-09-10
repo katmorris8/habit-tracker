@@ -5,7 +5,7 @@ class HabitCountButton extends Component {
 
   render () {
     return (
-      <button>0</button>
+      <button>{this.props.counter}</button>
     )
   }
 }

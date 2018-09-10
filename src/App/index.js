@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
+import Nav from "../Nav";
 import HabitInput from "../HabitInput";
 import Habit from "../Habit";
-import Nav from "../Nav";
 import Awards from "../Awards";
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
-      count: JSON.parse(localStorage.getItem('count')) || 0,
+      counter: JSON.parse(localStorage.getItem('counter')) || 0,
     }
   }
 
@@ -42,6 +42,13 @@ class App extends Component {
     })
   }
 
+  handleClick = () => {
+    this.setState(prevState => {
+      return ({counter: prevState.counter + 1})
+    })
+    localStorage.setItem('counter', JSON.stringify(this.state.counter));
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,7 +61,11 @@ class App extends Component {
               onChange={this.handleChange}
               value={this.state.habitInput}
             />
-            <Habit habits={this.state.habits} />
+            <Habit
+              habits={this.state.habits}
+              onClick={this.handleClick}
+              counter={this.state.counter}
+            />
           </div>
         )}
         {this.state.currentPanel === 'awards' && (

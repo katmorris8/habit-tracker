@@ -12,7 +12,7 @@ class Habit extends Component {
         {this.props.habits.map((habit, index) => {
           return (
             <li key={habit[index]}>
-              <HabitCountButton />
+              <HabitCountButton onClick={this.props.onClick} count={this.props.counter} />
               <HabitName habits={habit} />
             </li>
           )
@@ -24,5 +24,3 @@ class Habit extends Component {
 }
 
 export default Habit;
-
-// each time someone clicks on the button

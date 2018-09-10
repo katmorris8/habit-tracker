@@ -13,7 +13,14 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
+      count: JSON.parse(localStorage.getItem('count')) || 0,
     }
+  }
+
+  setPanel = panel => {
+    this.setState({
+      currentPanel: panel,
+    })
   }
 
   updateHabitInput = event => {
@@ -26,12 +33,6 @@ class App extends Component {
         habits: habitList,
         habitInput: '',
       })
-    })
-  }
-
-  setPanel = panel => {
-    this.setState({
-      currentPanel: panel,
     })
   }
 
@@ -57,7 +58,7 @@ class App extends Component {
           </div>
         )}
         {this.state.currentPanel === 'awards' && (
-          <Awards />
+          <Awards habits={this.state.habits} />
         )}
 
       </div>

@@ -6,7 +6,7 @@ class HabitName extends Component {
   render () {
     const habit = this.props.habits;
     return (
-      <p>{habit}</p>
+      <p className='habit-name' >{habit}</p>
     )
   }
 }

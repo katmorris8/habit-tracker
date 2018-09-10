@@ -1,0 +1,9 @@
+.habit {
+  list-style: none;
+  display: flex;
+  padding-top: 10px;
+}
+
+.habits-list {
+  padding: 0;
+}

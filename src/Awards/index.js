@@ -6,10 +6,10 @@ class Awards extends Component {
 
   render() {
     return (
-      <div>
+      <div className='awards' >
         {this.props.habits.map((habit, index) => {
             return (
-              <div key={habit[index]}>
+              <div key={habit[index]} className='award' >
                 ⭐️
                 <HabitName habits={habit} />
               </div>

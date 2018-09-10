@@ -5,8 +5,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav>
-        <a href="#" onClick={
+      <nav className='nav-bar' >
+        <a className='nav-link' href="#" onClick={
           event => {
             event.preventDefault();
             this.props.setPanel('habits');
@@ -15,7 +15,7 @@ class Nav extends Component {
         >
           Habits
         </a>
-        <a href="#" onClick={
+        <a className='nav-link' href="#" onClick={
           event => {
             event.preventDefault();
             this.props.setPanel('awards');

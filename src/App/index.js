@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import HabitInput from "../HabitInput";
 import Habit from "../Habit";
+import Nav from "../Nav";
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends Component {
     this.state = {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
+      currentPanel: 'habits',
     }
   }
 
@@ -26,22 +28,34 @@ class App extends Component {
     })
   }
 
+  setPanel = panel => {
+    this.setState({
+      currentPanel: panel,
+    })
+  }
+
   handleChange = event => {
     this.setState({
       habitInput: event.target.value,
     })
   }
-  
+
   render() {
     return (
       <div className="App">
         <h1>Habit Tracker</h1>
-        <HabitInput 
-          habitInput={this.updateHabitInput}
-          onChange={this.handleChange} 
-          value={this.state.habitInput}
-        />
-        <Habit habits={this.state.habits} />
+        <Nav setPanel={this.setPanel} />
+        {this.state.currentPanel === 'habits' && (
+          <div>
+            <HabitInput
+              habitInput={this.updateHabitInput}
+              onChange={this.handleChange}
+              value={this.state.habitInput}
+            />
+            <Habit habits={this.state.habits} />
+          </div>
+        )}
+
       </div>
     )
   }

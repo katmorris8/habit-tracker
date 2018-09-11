@@ -1,0 +1,21 @@
+.delete {
+  margin-left: 30px;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  
+}
+
+.close {
+  fill: lightgrey;
+  height: 18px;
+  width: 18px;
+}
+
+.close:hover {
+  fill: #FB7C81;
+}

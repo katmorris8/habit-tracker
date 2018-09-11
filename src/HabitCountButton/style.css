@@ -3,5 +3,9 @@
   font-weight: bold;
   padding: 10px 15px;
   margin-right: 20px;
-  background-color: #FCFC8A;
+  background-color: #DDAFFF;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 1000px;
 }

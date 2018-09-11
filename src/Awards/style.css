@@ -1,12 +1,17 @@
 .awards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .award {
   text-align: center;
   font-size: 90px;
+  margin: 0 auto;
+}
+
+.star {
   width: 100px;
-  margin: 30px 30px;
+  height: 100px;
+  fill: #FCAE38;
 }

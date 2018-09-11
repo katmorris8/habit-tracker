@@ -13,13 +13,21 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
-      counter: JSON.parse(localStorage.getItem('counter')) || 0,
+      count: 0,
+      counter: JSON.parse(localStorage.getItem('counter')) || [0],
+      longestStreak: JSON.parse(localStorage.getItem('streak')) || [],
     }
   }
 
   setPanel = panel => {
     this.setState({
       currentPanel: panel,
+    })
+  }
+
+  handleChange = event => {
+    this.setState({
+      habitInput: event.target.value,
     })
   }
 
@@ -36,42 +44,62 @@ class App extends Component {
     })
   }
 
-  handleChange = event => {
+  handleClick = event => {
     this.setState({
-      habitInput: event.target.value,
+      count: event.target.count,
     })
   }
 
-  handleClick = () => {
+  updateHabitCounter = () => {
     this.setState(prevState => {
-      return ({counter: prevState.counter + 1})
+      const counter = [...prevState.counter];
+      counter.push(prevState.count + 1);
+      localStorage.setItem('counter', JSON.stringify(counter));
+      return ({
+        counter: counter,
+      })
     })
-    localStorage.setItem('counter', JSON.stringify(this.state.counter));
+  }
+
+  deleteHabit = index => {
+    this.setState(prevState => {
+      const habitList = [...prevState.habits];
+      habitList.splice(index, 1);
+      localStorage.setItem('habits', JSON.stringify(habitList));
+      return ({
+        habits: habitList
+      })
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Habit Tracker</h1>
-        <Nav setPanel={this.setPanel} />
-        {this.state.currentPanel === 'habits' && (
-          <div>
-            <HabitInput
-              habitInput={this.updateHabitInput}
-              onChange={this.handleChange}
-              value={this.state.habitInput}
-            />
-            <Habit
-              habits={this.state.habits}
-              onClick={this.handleClick}
-              counter={this.state.counter}
-            />
-          </div>
-        )}
-        {this.state.currentPanel === 'awards' && (
-          <Awards habits={this.state.habits} />
-        )}
-
+        <div className='header'>
+          <h1>Habit Tracker</h1>
+          <Nav setPanel={this.setPanel} />
+        </div>
+        <div className='main'>
+          {this.state.currentPanel === 'habits' && (
+            <div>
+              <HabitInput
+                habitInput={this.updateHabitInput}
+                onChange={this.handleChange}
+                value={this.state.habitInput}
+              />
+              <Habit
+                habits={this.state.habits}
+                onClick={this.handleClick}
+                count={this.state.counter}
+                habitCounter={this.updateHabitCounter}
+                deleteHabit={this.deleteHabit}
+              />
+            </div>
+          )}
+          {this.state.currentPanel === 'awards' && (
+            <Awards habits={this.state.habits} />
+          )}
+        </div>
       </div>
     )
   }

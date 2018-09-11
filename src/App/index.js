@@ -14,7 +14,7 @@ class App extends Component {
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
       count: 0,
-      counter: JSON.parse(localStorage.getItem('counter')) || 0,
+      counter: JSON.parse(localStorage.getItem('count')) || 0,
     }
   }
 
@@ -45,13 +45,12 @@ class App extends Component {
 
   updateHabitCounter = () => {
     this.setState(prevState => {
-      const counter = [...prevState.counter];
-      const newCount = Number(prevState.counter) + 1;
-      counter.push(Number(newCount));
-      localStorage.setItem('counter', JSON.stringify(counter));
+      let count = Number(prevState.count);
+      let newCount = count + 1;
+      localStorage.setItem('count', JSON.stringify(newCount));
       return ({
         count: newCount,
-        counter: counter,
+        counter: count,
       })
     })
   }

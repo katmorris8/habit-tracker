@@ -13,7 +13,7 @@ class Habit extends Component {
         {this.props.habits.map((habit, index) => {
           return (
             <li key={habit[index]} className='habit' >
-              <HabitCountButton onClick={() => this.props.onClick(index)} habitCounter={this.props.updateHabitCounter} count={this.props.count} />
+              <HabitCountButton onClick={() => this.props.onClick(index)} counter={this.props.counter} count={this.props.count} />
               <HabitName key={habit} habits={habit} />
               <DeleteButton className='delete-habit-btn' deleteHabit={()=> this.props.deleteHabit(index)} />
             </li>

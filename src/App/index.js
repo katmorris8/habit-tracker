@@ -14,8 +14,7 @@ class App extends Component {
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
       count: 0,
-      counter: JSON.parse(localStorage.getItem('counter')) || [0],
-      longestStreak: JSON.parse(localStorage.getItem('streak')) || [],
+      counter: JSON.parse(localStorage.getItem('counter')) || 0,
     }
   }
 
@@ -44,18 +43,14 @@ class App extends Component {
     })
   }
 
-  handleClick = event => {
-    this.setState({
-      count: event.target.count,
-    })
-  }
-
   updateHabitCounter = () => {
     this.setState(prevState => {
       const counter = [...prevState.counter];
-      counter.push(prevState.count + 1);
+      const newCount = Number(prevState.counter) + 1;
+      counter.push(Number(newCount));
       localStorage.setItem('counter', JSON.stringify(counter));
       return ({
+        count: newCount,
         counter: counter,
       })
     })
@@ -89,9 +84,8 @@ class App extends Component {
               />
               <Habit
                 habits={this.state.habits}
-                onClick={this.handleClick}
-                count={this.state.counter}
-                habitCounter={this.updateHabitCounter}
+                onClick={this.updateHabitCounter}
+                count={this.state.count}
                 deleteHabit={this.deleteHabit}
               />
             </div>

@@ -5,10 +5,15 @@
 }
 
 .nav-link {
+  font-family: 'Delius', cursive;
   font-size: 32px;
   text-decoration: none;
   font-weight: bold;
   color: #FB7C81;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .nav-link:hover {

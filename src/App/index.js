@@ -13,8 +13,6 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
-      count: 0,
-      counter: JSON.parse(localStorage.getItem('count')) || 0,
     }
   }
 
@@ -39,18 +37,6 @@ class App extends Component {
       return ({
         habits: habitList,
         habitInput: '',
-      })
-    })
-  }
-
-  updateHabitCounter = () => {
-    this.setState(prevState => {
-      let count = Number(prevState.count);
-      let newCount = count + 1;
-      localStorage.setItem('count', JSON.stringify(newCount));
-      return ({
-        count: newCount,
-        counter: count,
       })
     })
   }
@@ -83,8 +69,6 @@ class App extends Component {
               />
               <Habit
                 habits={this.state.habits}
-                onClick={this.updateHabitCounter}
-                count={this.state.count}
                 deleteHabit={this.deleteHabit}
               />
             </div>

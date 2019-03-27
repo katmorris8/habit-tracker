@@ -1,0 +1,19 @@
+.habit {
+  list-style: none;
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  padding: 5px;
+}
+
+.habits-list {
+  padding: 0;
+}
+
+.delete-habit-btn {
+  display: none;
+}
+
+.habit:hover.delete-habit {
+  display: block;
+}

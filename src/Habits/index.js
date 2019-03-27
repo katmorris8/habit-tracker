@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
 import HabitCountButton from "../HabitCountButton";
-import HabitName from "../HabitName";
+import Habit from "../Habit";
 import DeleteButton from "../DeleteButton";
 
-class Habit extends Component {
+class Habits extends Component {
 
   render() {
     return (
@@ -14,7 +14,7 @@ class Habit extends Component {
           return (
             <li key={habit[index]} className='habit' >
               <HabitCountButton key={index} />
-              <HabitName key={habit} habits={habit} />
+              <Habit key={habit} habits={habit} />
               <DeleteButton className='delete-habit-btn' deleteHabit={()=> this.props.deleteHabit(index)} />
             </li>
           )
@@ -25,4 +25,4 @@ class Habit extends Component {
   }
 }
 
-export default Habit;
+export default Habits;

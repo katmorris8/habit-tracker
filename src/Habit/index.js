@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-class HabitName extends Component {
+class Habit extends Component {
 
   render () {
     const habit = this.props.habits;
@@ -11,4 +11,4 @@ class HabitName extends Component {
   }
 }
 
-export default HabitName;
+export default Habit;

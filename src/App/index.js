@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import Nav from "../Nav";
 import HabitInput from "../HabitInput";
-import Habit from "../Habit";
+import Habits from "../Habits";
 import Awards from "../Awards";
 
 class App extends Component {
@@ -67,7 +67,7 @@ class App extends Component {
                 onChange={this.handleChange}
                 value={this.state.habitInput}
               />
-              <Habit
+              <Habits
                 habits={this.state.habits}
                 deleteHabit={this.deleteHabit}
               />

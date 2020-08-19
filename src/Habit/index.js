@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HabitCountButton from "../HabitCountButton";
 import "./style.css";
 
 class Habit extends Component {
@@ -26,8 +27,8 @@ class Habit extends Component {
   render() {
     const habit = this.props.habits;
     return (
-      <div>
-        <button className='counter-btn' onClick={this.updateHabitCounter}>{this.state.count}</button>
+      <div className="habit">
+        <HabitCountButton click={this.updateHabitCounter} count={this.state.count} />
         <p className='habit-name'>{habit}</p>
       </div>
     )

@@ -24,19 +24,23 @@ class App extends Component {
 
   handleChange = event => {
     this.setState({
-      habitInput: event.target.value,
+      habitInput: event.target.value
     })
   }
 
-  updateHabitInput = event => {
+  handleSubmit = event => {
     event.preventDefault();
+    const newHabit = {
+      text: this.state.habitInput,
+      count: 0
+    }
     this.setState(prevState => {
       const habitList = [...prevState.habits];
-      habitList.push(this.state.habitInput);
+      habitList.push(newHabit);
       localStorage.setItem('habits', JSON.stringify(habitList));
       return ({
-        habits: habitList,
         habitInput: '',
+        habits: habitList
       })
     })
   }
@@ -63,7 +67,7 @@ class App extends Component {
           {this.state.currentPanel === 'habits' && (
             <div>
               <HabitInput
-                habitInput={this.updateHabitInput}
+                habitInput={this.handleSubmit}
                 onChange={this.handleChange}
                 value={this.state.habitInput}
               />

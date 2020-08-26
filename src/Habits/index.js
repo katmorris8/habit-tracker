@@ -12,7 +12,8 @@ class Habits extends Component {
           return (
             <li key={`${habit.text} ${index}`} className='habit' >
               <Habit 
-                key={habit.text} 
+                key={habit.text}
+                id={index} 
                 habits={habit.text} 
                 count={habit.count} 
                 counter={this.props.counter}

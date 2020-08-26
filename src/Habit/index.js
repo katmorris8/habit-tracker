@@ -7,7 +7,7 @@ class Habit extends Component {
     const habit = this.props.habits;
     return (
       <div className="habit-info" id={this.props.id}>
-        <HabitCountButton id={this.props.id} click={this.props.counter} count={this.props.count} />
+        <HabitCountButton click={this.props.counter} count={this.props.count} />
         <p className='habit-name'>{habit}</p>
       </div>
     )

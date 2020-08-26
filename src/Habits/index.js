@@ -16,7 +16,7 @@ class Habits extends Component {
                 id={index} 
                 habits={habit.text} 
                 count={habit.count} 
-                counter={this.props.counter}
+                counter={()=> this.props.counter(index)}
               />
               <DeleteButton 
                 className='delete-habit-btn' 

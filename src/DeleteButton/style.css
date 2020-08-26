@@ -1,21 +1,18 @@
-.delete {
-  margin-left: 40px;
-}
-
 .delete-btn {
-  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 28px;
+  height: 28px;
+  fill: darkgrey;
   background: none;
+  cursor: pointer;
   border: none;
   outline: none;
-  height: 100%;
 }
 
-.close {
-  fill: lightgrey;
-  height: 18px;
-  width: 18px;
-}
-
-.close:hover {
+.delete-btn:hover {
   fill: #FB7C81;
 }

@@ -45,6 +45,18 @@ class App extends Component {
     })
   }
 
+  updateHabitCounter = (e) => {
+    this.setState(prevState => {
+      // let count = Number(prevState.count);
+      // let newCount = count + 1;
+      // localStorage.setItem('count', JSON.stringify(newCount));
+      // return ({
+      //   count: newCount,
+      //   counter: count,
+      // })
+    })
+  }
+
   deleteHabit = index => {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
@@ -73,6 +85,7 @@ class App extends Component {
               />
               <Habits
                 habits={this.state.habits}
+                counter={this.updateHabitCounter}
                 deleteHabit={this.deleteHabit}
               />
             </div>

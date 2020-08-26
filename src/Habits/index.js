@@ -15,6 +15,7 @@ class Habits extends Component {
                 key={habit.text} 
                 habits={habit.text} 
                 count={habit.count} 
+                counter={this.props.counter}
               />
               <DeleteButton 
                 className='delete-habit-btn' 

@@ -45,15 +45,15 @@ class App extends Component {
     })
   }
 
-  updateHabitCounter = (e) => {
+  updateHabitCounter = event => {
+    const id = event.target.id;
     this.setState(prevState => {
-      // let count = Number(prevState.count);
-      // let newCount = count + 1;
-      // localStorage.setItem('count', JSON.stringify(newCount));
-      // return ({
-      //   count: newCount,
-      //   counter: count,
-      // })
+      const habitList = [...prevState.habits];
+      habitList[id].count += 1;
+      localStorage.setItem('habits', JSON.stringify(habitList));
+      return({
+        habits: habitList
+      })
     })
   }
 

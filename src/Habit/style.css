@@ -1,5 +1,6 @@
-.habit {
+.habit-info {
   display: flex;
+  align-items: center;
 }
 
 .habit-name {

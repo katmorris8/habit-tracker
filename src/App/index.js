@@ -13,6 +13,7 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
+      hasAwards: false,
     }
   }
 
@@ -50,9 +51,16 @@ class App extends Component {
       const habitList = [...prevState.habits];
       habitList[index].count += 1;
       localStorage.setItem('habits', JSON.stringify(habitList));
-      return({
-        habits: habitList
-      })
+      if (habitList[index].count >= 21) {
+        return({
+          habits: habitList,
+          hasAwards: true
+        })
+      } else {
+        return({
+          habits: habitList
+        })
+      }
     })
   }
 
@@ -90,7 +98,7 @@ class App extends Component {
             </div>
           )}
           {this.state.currentPanel === 'awards' && (
-            <Awards habits={this.state.habits} />
+            <Awards habits={this.state.habits} hasAwards={this.state.hasAwards} />
           )}
         </div>
       </div>

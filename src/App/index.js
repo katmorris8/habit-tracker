@@ -13,7 +13,7 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
-      hasAwards: false,
+      hasAwards: JSON.parse(localStorage.getItem('hasAwards')) || false,
     }
   }
 
@@ -52,6 +52,7 @@ class App extends Component {
       habitList[index].count += 1;
       localStorage.setItem('habits', JSON.stringify(habitList));
       if (habitList[index].count >= 21) {
+        localStorage.setItem('hasAwards', 'true');
         return({
           habits: habitList,
           hasAwards: true

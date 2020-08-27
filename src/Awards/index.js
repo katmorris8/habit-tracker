@@ -2,21 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 
 class Awards extends Component {
-  constructor() {
-    super();
-    this.state = {
-      hasAwards: true
-    }
-  }
-
-  componentDidMount() {
-    console.log(this.state.hasAwards);
-  }
-
   render() {
     return (
       <div className='awards' >
-        {this.state.hasAwards && this.props.habits.map((habit, index) => {
+        {this.props.hasAwards && this.props.habits.map((habit, index) => {
             return (
               <div className='award' key={`${habit.text} ${index} award`}>
                 {habit.count >= 21 && (
@@ -32,7 +21,7 @@ class Awards extends Component {
               </div>
             )
           })}
-          {!this.state.hasAwards && (
+          {!this.props.hasAwards && (
             <p>It takes 21 days to form a habit. Come back when you've completed a habit at least 21 times!</p>
           )}
       </div>

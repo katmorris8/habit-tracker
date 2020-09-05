@@ -13,7 +13,6 @@ class App extends Component {
       habitInput: '',
       habits: JSON.parse(localStorage.getItem('habits')) || [],
       currentPanel: 'habits',
-      hasAwards: JSON.parse(localStorage.getItem('hasAwards')) || false,
     }
   }
 
@@ -33,7 +32,9 @@ class App extends Component {
     event.preventDefault();
     const newHabit = {
       text: this.state.habitInput,
-      count: 0
+      count: 0,
+      awarded: false,
+      deleted: false
     }
     this.setState(prevState => {
       const habitList = [...prevState.habits];
@@ -50,18 +51,13 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList[index].count += 1;
-      localStorage.setItem('habits', JSON.stringify(habitList));
       if (habitList[index].count >= 21) {
-        localStorage.setItem('hasAwards', 'true');
-        return({
-          habits: habitList,
-          hasAwards: true
-        })
-      } else {
-        return({
-          habits: habitList
-        })
+        habitList[index].awarded = true;
       }
+      localStorage.setItem('habits', JSON.stringify(habitList));
+      return ({
+        habits: habitList
+      })
     })
   }
 
@@ -99,7 +95,7 @@ class App extends Component {
             </div>
           )}
           {this.state.currentPanel === 'awards' && (
-            <Awards habits={this.state.habits} hasAwards={this.state.hasAwards} />
+            <Awards habits={this.state.habits} />
           )}
         </div>
       </div>

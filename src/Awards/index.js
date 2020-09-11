@@ -10,7 +10,7 @@ class Awards extends Component {
       <div className='awards' >
         {awardedArr.some(award => award) && this.props.habits.map((habit, index) => {
           return(
-            <li key={`${habit.text} ${index} award`}>
+            <li key={`${habit.text} ${index} award`} className="award">
               <Award habit={habit} />
             </li>
           )

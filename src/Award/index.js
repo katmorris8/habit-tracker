@@ -4,7 +4,7 @@ import './style.css';
 class Award extends Component {
   render() {
     return (
-      <div className='award' >
+      <div>
         {this.props.habit.awarded && (
           <div>
             <div className='star'>

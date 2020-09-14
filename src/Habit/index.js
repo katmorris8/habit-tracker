@@ -4,11 +4,15 @@ import "./style.css";
 
 class Habit extends Component {
   render() {
-    const habit = this.props.habits;
     return (
       <div className="habit-info" id={this.props.id}>
-        <HabitCountButton click={this.props.counter} count={this.props.count} />
-        <p className='habit-name'>{habit}</p>
+        <HabitCountButton 
+          click={this.props.counter} 
+          count={this.props.count} 
+          confetti={this.props.confetti}
+          confettiConfig={this.props.confettiConfig}
+        />
+        <p className='habit-name'>{this.props.habits}</p>
       </div>
     )
   }

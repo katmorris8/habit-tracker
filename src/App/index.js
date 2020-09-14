@@ -81,6 +81,7 @@ class App extends Component {
         setLocalStorage('habits', habitList);
         return ({
           habits: habitList,
+          confetti: false
         })
       }
     })
@@ -116,6 +117,8 @@ class App extends Component {
                 habits={this.state.habits}
                 counter={this.updateHabitCounter}
                 deleteHabit={this.deleteHabit}
+                confetti={this.state.confetti}
+                confettiConfig={confettiConfig}
               />
             </div>
           )}

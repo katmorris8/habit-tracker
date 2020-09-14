@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Confetti from 'react-dom-confetti';
 import "./style.css";
 import Nav from "../Nav";
 import HabitInput from "../HabitInput";
@@ -20,9 +19,9 @@ const confettiConfig = {
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
-const storedHabits = JSON.parse(localStorage.getItem('habits'));
+const storedHabits = (item) => { JSON.parse(localStorage.getItem(item)) };
 
-const setLocalStorage = localStorage.setItem('habits', JSON.stringify(habitList));
+const setLocalStorage = (item, list) => { localStorage.setItem(item, JSON.stringify(list)) };
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class App extends Component {
 
     this.state = {
       habitInput: '',
-      habits: storedHabits || [],
+      habits: storedHabits('habits') || [],
       currentPanel: 'habits',
       confetti: false
     }
@@ -59,7 +58,7 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList.push(newHabit);
-      setLocalStorage;
+      setLocalStorage('habits', habitList);
       return ({
         habitInput: '',
         habits: habitList
@@ -73,13 +72,13 @@ class App extends Component {
       habitList[index].count += 1;
       if (habitList[index].count === 21) {
         habitList[index].awarded = true;
-        setLocalStorage;
+        setLocalStorage('habits', habitList);
         return ({
           habits: habitList,
           confetti: true
         })
       } else {
-        setLocalStorage;
+        setLocalStorage('habits', habitList);
         return ({
           habits: habitList,
         })
@@ -91,7 +90,7 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList.splice(index, 1);
-      setLocalStorage;
+      setLocalStorage('habits', habitList);
       return ({
         habits: habitList
       })
@@ -118,7 +117,6 @@ class App extends Component {
                 counter={this.updateHabitCounter}
                 deleteHabit={this.deleteHabit}
               />
-              <Confetti active={ this.state.confetti } config={ confettiConfig }/>
             </div>
           )}
           {this.state.currentPanel === 'awards' && (

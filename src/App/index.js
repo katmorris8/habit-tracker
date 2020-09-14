@@ -63,24 +63,23 @@ class App extends Component {
     })
   }
 
-  activateConfetti = () => {
-    this.setState({
-      confetti: true
-    })
-  }
-
   updateHabitCounter = index => {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList[index].count += 1;
       if (habitList[index].count === 21) {
         habitList[index].awarded = true;
-        this.activateConfetti();
+        localStorage.setItem('habits', JSON.stringify(habitList));
+        return ({
+          habits: habitList,
+          confetti: true
+        })
+      } else {
+        localStorage.setItem('habits', JSON.stringify(habitList));
+        return ({
+          habits: habitList,
+        })
       }
-      localStorage.setItem('habits', JSON.stringify(habitList));
-      return ({
-        habits: habitList,
-      })
     })
   }
 

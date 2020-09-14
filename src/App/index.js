@@ -20,13 +20,17 @@ const confettiConfig = {
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
+const storedHabits = JSON.parse(localStorage.getItem('habits'));
+
+const setLocalStorage = localStorage.setItem('habits', JSON.stringify(habitList));
+
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       habitInput: '',
-      habits: JSON.parse(localStorage.getItem('habits')) || [],
+      habits: storedHabits || [],
       currentPanel: 'habits',
       confetti: false
     }
@@ -55,7 +59,7 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList.push(newHabit);
-      localStorage.setItem('habits', JSON.stringify(habitList));
+      setLocalStorage;
       return ({
         habitInput: '',
         habits: habitList
@@ -69,13 +73,13 @@ class App extends Component {
       habitList[index].count += 1;
       if (habitList[index].count === 21) {
         habitList[index].awarded = true;
-        localStorage.setItem('habits', JSON.stringify(habitList));
+        setLocalStorage;
         return ({
           habits: habitList,
           confetti: true
         })
       } else {
-        localStorage.setItem('habits', JSON.stringify(habitList));
+        setLocalStorage;
         return ({
           habits: habitList,
         })
@@ -87,7 +91,7 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList.splice(index, 1);
-      localStorage.setItem('habits', JSON.stringify(habitList));
+      setLocalStorage;
       return ({
         habits: habitList
       })

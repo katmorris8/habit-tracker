@@ -1,13 +1,13 @@
 .counter-btn {
-  width: 60px;
+  min-width: 60px;
   height: 60px;
   font-size: 18px;
   font-weight: bold;
-  padding: 10px 15px;
-  margin-right: 20px;
   background-color: #DDAFFF;
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 1000px;
+  border-radius: 50%;
+  padding: 0;
+  margin-right: 20px;
 }

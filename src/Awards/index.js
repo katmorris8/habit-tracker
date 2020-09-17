@@ -4,18 +4,19 @@ import Award from '../Award';
 
 class Awards extends Component {
   render() {
-    const awardedArr = this.props.habits.map(habit => habit.awarded)
+    const awarded = this.props.habits.map(habit => habit.awarded)
+    const awardedArr = this.props.habits.filter(habit => habit.awarded)
     
     return (
       <div className='awards' >
-        {awardedArr.some(award => award) && this.props.habits.map((habit, index) => {
+        {awarded.some(award => award) && awardedArr.map((habit, index) => {
           return(
             <li key={`${habit.text} ${index} award`} className="award">
               <Award habit={habit} />
             </li>
           )
           })}
-          {awardedArr.every(award => !award) && (
+          {awarded.every(award => !award) && (
             <p>It takes 21 days to form a habit. Come back when you've completed a habit at least 21 times!</p>
           )}
       </div>

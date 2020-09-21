@@ -4,13 +4,13 @@ import "./style.css";
 class Nav extends Component {
 
   render() {
-    let className = 'nav-link';
+    let shakeClassName = 'shake';
     if (this.props.confetti) {
-      className += ' shake-bottom';
+      shakeClassName += ' shake-bottom';
     }
     return (
       <nav className='nav-bar' >
-        <button className='nav-link' onClick={
+        <button className='nav-link tab' onClick={
           event => {
             event.preventDefault();
             this.props.setPanel('habits');
@@ -19,14 +19,14 @@ class Nav extends Component {
         >
           Habits
         </button>
-        <button className={className} href="#" onClick={
+        <button className='nav-link not-tab awards-tab' href="#" onClick={
           event => {
             event.preventDefault();
             this.props.setPanel('awards');
           }
         }
         >
-          Awards
+          <p className={shakeClassName}>Awards</p>
         </button>
       </nav>
     )

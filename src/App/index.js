@@ -103,7 +103,10 @@ class App extends Component {
       <div className="App">
         <div className='header'>
           <h1>Habit Tracker</h1>
-          <Nav setPanel={this.setPanel} />
+          <Nav 
+            setPanel={this.setPanel} 
+            confetti={this.state.confetti}
+          />
         </div>
         <div className='main'>
           {this.state.currentPanel === 'habits' && (

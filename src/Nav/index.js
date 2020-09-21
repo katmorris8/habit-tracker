@@ -4,6 +4,10 @@ import "./style.css";
 class Nav extends Component {
 
   render() {
+    let className = 'nav-link'
+    if (this.props.confetti) {
+      className += ' shake-bottom';
+    }
     return (
       <nav className='nav-bar' >
         <button className='nav-link' onClick={
@@ -15,7 +19,7 @@ class Nav extends Component {
         >
           Habits
         </button>
-        <button className='nav-link' href="#" onClick={
+        <button className={className} href="#" onClick={
           event => {
             event.preventDefault();
             this.props.setPanel('awards');

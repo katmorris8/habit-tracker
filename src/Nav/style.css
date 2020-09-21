@@ -22,6 +22,20 @@
   color: #DDAFFF;
 }
 
+.tab {
+  border: 1px solid #333;
+  border-style: solid solid none solid;
+  border-radius: 5px 5px 0 0;
+}
+
+.not-tab {
+  border-bottom: 1px solid #333;
+}
+
+.awards-tab p {
+  margin: 0;
+}
+
 .shake-bottom {
 	-webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
           animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;

@@ -105,6 +105,7 @@ class App extends Component {
           <h1>Habit Tracker</h1>
           <Nav 
             setPanel={this.setPanel} 
+            panel={this.state.currentPanel}
             confetti={this.state.confetti}
           />
         </div>

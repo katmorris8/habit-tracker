@@ -4,7 +4,7 @@ import "./style.css";
 class Nav extends Component {
 
   render() {
-    let className = 'nav-link'
+    let className = 'nav-link';
     if (this.props.confetti) {
       className += ' shake-bottom';
     }

@@ -1,10 +1,11 @@
 .nav-bar {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 10px;
 }
 
 .nav-link {
+  width: 50%;
   font-family: 'Delius', cursive;
   font-size: 32px;
   text-decoration: none;
@@ -14,6 +15,7 @@
   background: none;
   border: none;
   outline: none;
+  padding: .5rem 0;
 }
 
 .nav-link:hover {

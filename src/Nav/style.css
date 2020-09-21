@@ -23,8 +23,8 @@
 .shake-bottom {
 	-webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
           animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 /* ----------------------------------------------

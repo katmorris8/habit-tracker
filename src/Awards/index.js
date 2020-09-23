@@ -4,8 +4,8 @@ import Award from '../Award';
 
 class Awards extends Component {
   render() {
-    const awarded = this.props.habits.map(habit => habit.awarded)
-    const awardedArr = this.props.habits.filter(habit => habit.awarded)
+    const awarded = this.props.habits.map(habit => habit.awarded);
+    const awardedArr = this.props.habits.filter(habit => habit.awarded);
     
     return (
       <div className='awards' >

@@ -21,14 +21,14 @@ class NavLink extends Component {
     // }
 
     return (
-      <button  href="#" onClick={
+      <button className='nav-link' href="#" onClick={
         event => {
           event.preventDefault();
           this.props.setPanel(this.props.name);
         }
       }
       >
-        <p >{this.props.name}</p>
+        <p>{this.props.name}</p>
       </button>
     )
   }

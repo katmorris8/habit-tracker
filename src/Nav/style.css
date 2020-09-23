@@ -2,3 +2,18 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.nav-bar div {
+  width: 50%;
+  text-align: center;
+}
+
+.tab {
+  border: 1px solid #333;
+  border-style: solid solid none solid;
+  border-radius: 5px 5px 0 0;
+}
+
+.not-tab {
+  border-bottom: 1px solid #333;
+}

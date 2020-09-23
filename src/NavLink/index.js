@@ -19,16 +19,21 @@ class NavLink extends Component {
     // if (this.props.confetti) {
     //   shakeClassName += ' shake-bottom';
     // }
+    
+    let pClassName = '';
+    if (this.props.confetti && this.props.name === 'awards') {
+      pClassName += 'shake-bottom';
+    }
 
     return (
-      <button className='nav-link' href="#" onClick={
+      <button className='nav-link' onClick={
         event => {
           event.preventDefault();
           this.props.setPanel(this.props.name);
         }
       }
       >
-        <p>{this.props.name}</p>
+        <p className={pClassName}>{this.props.name}</p>
       </button>
     )
   }

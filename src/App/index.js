@@ -106,7 +106,7 @@ class App extends Component {
           <Nav 
             setPanel={this.setPanel} 
             panel={this.state.currentPanel}
-            confetti={this.state.confetti}
+            animate={this.state.confetti}
           />
         </div>
         <div className='main'>

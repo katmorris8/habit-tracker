@@ -13,11 +13,10 @@ class Nav extends Component {
             return(
             <div key={`${name} ${index}`}>
               <NavLink 
-                key={name + index}
                 name={name}
                 setPanel={this.props.setPanel}
                 panel={this.props.panel}
-                confetti={this.props.confetti}
+                animate={this.props.animate && name === 'awards'}
               />
             </div>
           )})

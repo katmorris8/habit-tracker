@@ -8,12 +8,12 @@
   text-align: center;
 }
 
-.tab {
+.active-tab {
   border: 1px solid #333;
   border-style: solid solid none solid;
   border-radius: 5px 5px 0 0;
 }
 
-.not-tab {
+.inactive-tab {
   border-bottom: 1px solid #333;
 }

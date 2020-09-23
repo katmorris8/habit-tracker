@@ -4,14 +4,6 @@ import "./style.css";
 class NavLink extends Component {
 
   render() {
-
-    // let btnClassName = 'nav-link';
-    // if (this.props.pannel === this.props.name) {
-    //   btnClassName += ' tab';
-    // } else {
-    //   btnClassName += ' not-tab'; 
-    // }
-
     return (
       <button className='nav-link' onClick={
         event => {

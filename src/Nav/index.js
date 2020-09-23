@@ -11,7 +11,10 @@ class Nav extends Component {
         {
           links.map((name, index) => {
             return(
-            <div key={`${name} ${index}`} className={this.props.panel === name ? 'tab' : 'not-tab'}>
+            <div 
+              key={`${name} ${index}`} 
+              className={this.props.panel === name ? 'active-tab' : 'inactive-tab'}
+            >
               <NavLink 
                 name={name}
                 setPanel={this.props.setPanel}

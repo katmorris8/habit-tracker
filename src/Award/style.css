@@ -1,8 +1,20 @@
+.award-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .star {
   width: 100px;
   height: 100px;
   fill: #FCAE38;
   margin: 0 auto;
+}
+
+.award-name {
+  position: absolute;
+  margin: 0;
 }
 
 @media only screen and (max-width: 480px) {

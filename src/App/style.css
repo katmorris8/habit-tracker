@@ -50,6 +50,11 @@ h1 {
 
   .header {
     width: 85%;
+    top: 8vw;
+  }
+
+  .main {
+    padding: 42vw 8vw;
   }
 
   h1 {

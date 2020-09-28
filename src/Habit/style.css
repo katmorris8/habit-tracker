@@ -7,3 +7,10 @@
   font-size: 20px;
   margin: auto 20px auto 0;
 }
+
+@media only screen and (max-width: 480px) {
+  .habit-name {
+    font-size: 4.5vw;
+    margin: auto 4vw auto 0;
+  }
+}

@@ -4,3 +4,10 @@
   width: 100%;
   outline: none;
 }
+
+@media only screen and (max-width: 480px) {
+  .habit-input {
+    font-size: 4vw;
+    padding: 2vw;
+  }
+}

@@ -11,3 +11,12 @@
   padding: 0;
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 480px) {
+  .counter-btn {
+    min-width: 12.5vw;
+    height: 12.5vw;
+    font-size: 3.75vw;
+    margin-right: 3.5vw;
+  }
+}

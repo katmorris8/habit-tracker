@@ -4,7 +4,6 @@ import Nav from "../Nav";
 import HabitInput from "../HabitInput";
 import Habits from "../Habits";
 import Awards from "../Awards";
-import Confetti from 'react-dom-confetti';
 
 const confettiConfig = {
   angle: 90,
@@ -32,11 +31,7 @@ class App extends Component {
       habitInput: '',
       habits: storedHabits('habits') || [],
       currentPanel: 'habits',
-      confetti: {
-        run: false,
-        x: 0,
-        y: 0
-      }
+      confetti: false
     }
   }
 
@@ -80,17 +75,13 @@ class App extends Component {
         setLocalStorage('habits', habitList);
         return ({
           habits: habitList,
-          confetti: {
-            run: true
-          }
+          confetti: true
         })
       } else {
         setLocalStorage('habits', habitList);
         return ({
           habits: habitList,
-          confetti: {
-            run: false
-          }
+          confetti: false
         })
       }
     })
@@ -110,11 +101,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Confetti className="confetti" active={ this.state.confetti.run } config={ this.confettiConfig }/>
         <div className='header'>
           <h1>Habit Tracker</h1>
-          <Nav 
-            setPanel={this.setPanel} 
+          <Nav
+            setPanel={this.setPanel}
             panel={this.state.currentPanel}
             animate={this.state.confetti}
           />

@@ -16,7 +16,7 @@ class Habits extends Component {
                 id={index} 
                 habits={habit.text} 
                 count={habit.count} 
-                counter={()=> this.props.counter(index)}
+                counter={(event) => this.props.counter(event, index)}
                 confetti={this.props.confetti}
                 confettiConfig={this.props.confettiConfig}
               />

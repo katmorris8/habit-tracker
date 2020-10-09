@@ -16,13 +16,13 @@ class Habits extends Component {
                 id={index} 
                 habits={habit.text} 
                 count={habit.count} 
-                counter={(event) => this.props.counter(event, index)}
+                counter={() => this.props.counter(index)}
                 confetti={this.props.confetti}
                 confettiConfig={this.props.confettiConfig}
               />
               <DeleteButton 
                 className='delete-habit-btn' 
-                deleteHabit={()=> this.props.deleteHabit(index)} 
+                deleteHabit={() => this.props.deleteHabit(index)} 
               />
             </li>
           )

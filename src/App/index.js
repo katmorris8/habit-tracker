@@ -111,11 +111,6 @@ class App extends Component {
         </div> */}
         <div className='header'>
           <h1>Habit Tracker</h1>
-          <Nav
-            setPanel={this.setPanel}
-            panel={this.state.currentPanel}
-            animate={this.state.confetti}
-          />
         </div>
         <div className='main'>
           {this.state.currentPanel === 'habits' && (
@@ -137,6 +132,13 @@ class App extends Component {
           {this.state.currentPanel === 'awards' && (
             <Awards habits={this.state.habits} />
           )}
+        </div>
+        <div>
+          <Nav
+            setPanel={this.setPanel}
+            panel={this.state.currentPanel}
+            animate={this.state.confetti}
+          />
         </div>
       </div>
     )

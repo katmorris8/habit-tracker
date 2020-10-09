@@ -99,8 +99,16 @@ class App extends Component {
   }
 
   render() {
+    // const opacity = 70;
     return (
       <div className="App">
+        {/* <div className='swatches'>
+          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[0]}${opacity}`}}>0</div>
+          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[1]}${opacity}`}}>0</div>
+          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[2]}${opacity}`}}>0</div>
+          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[3]}${opacity}`}}>0</div>
+          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[4]}${opacity}`}}>0</div>
+        </div> */}
         <div className='header'>
           <h1>Habit Tracker</h1>
           <Nav
@@ -112,11 +120,11 @@ class App extends Component {
         <div className='main'>
           {this.state.currentPanel === 'habits' && (
             <div>
-              <HabitInput
+              {/* <HabitInput
                 habitInput={this.handleSubmit}
                 onChange={this.handleChange}
                 value={this.state.habitInput}
-              />
+              /> */}
               <Habits
                 habits={this.state.habits}
                 counter={this.updateHabitCounter}

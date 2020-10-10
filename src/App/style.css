@@ -4,24 +4,31 @@
 
 body {
   font-family: 'Delius', cursive;
-  margin: 0 auto;
   color: #333;
 }
 
 .app {
   width: 100%;
+  margin: 0 auto;
 }
 
 .header {
+  background-color: #ffffff;
   border-bottom: #eee solid 1px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 }
 
 .main {
   width: 95%;
   margin: 1rem auto;
+  padding: 2.5rem 0;
 }
 
 .nav-container {
+  background-color: #ffffff;
   position: fixed;
   bottom: 0;
   width: 100%;

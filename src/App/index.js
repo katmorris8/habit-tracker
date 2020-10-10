@@ -133,7 +133,7 @@ class App extends Component {
             <Awards habits={this.state.habits} />
           )}
         </div>
-        <div>
+        <div className='nav-container'>
           <Nav
             setPanel={this.setPanel}
             panel={this.state.currentPanel}

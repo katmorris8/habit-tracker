@@ -1,6 +1,6 @@
 .nav-link {
   font-family: 'Delius', cursive;
-  font-size: 32px;
+  font-size: 1.25rem;
   text-transform: capitalize;
   text-decoration: none;
   font-weight: bold;
@@ -105,12 +105,5 @@
   90% {
     -webkit-transform: rotate(2deg);
             transform: rotate(2deg);
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .nav-link {
-    font-size: 6.5vw;
-    padding: 1.5vw 0;
   }
 }

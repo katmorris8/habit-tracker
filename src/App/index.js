@@ -59,6 +59,7 @@ class App extends Component {
       const habitList = [...prevState.habits];
       habitList.push(newHabit);
       setLocalStorage('habits', habitList);
+      this.setPanel('habits');
       return ({
         habitInput: '',
         habits: habitList

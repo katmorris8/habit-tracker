@@ -5,7 +5,7 @@ import NavLink from '../NavLink';
 class Nav extends Component {
 
   render() {
-    const links = ['habits', 'awards'];
+    const links = ['habits', 'create new', 'awards'];
     return (
       <nav className='nav-bar'>
         {

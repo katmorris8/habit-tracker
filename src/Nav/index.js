@@ -5,23 +5,38 @@ import NavLink from '../NavLink';
 class Nav extends Component {
 
   render() {
-    const links = ['habits', 'create new', 'awards'];
+    const links = [
+      {
+        name: 'habits',
+        icon: 'fas fa-home'
+      },
+      {
+        name: 'create new',
+        icon: 'fas fa-plus'
+      },
+      {
+        name: 'awards',
+        icon: 'far fa-star'
+      }
+    ]
     return (
       <nav className='nav-bar'>
         {
-          links.map((name, index) => {
-            return(
-            <div 
-              key={`${name} ${index}`} 
-              className={this.props.panel === name ? 'active-tab' : 'inactive-tab'}
-            >
-              <NavLink 
-                name={name}
-                setPanel={this.props.setPanel}
-                animate={this.props.animate && name === 'awards'}
-              />
-            </div>
-          )})
+          links.map((link, index) => {
+            return (
+              <div
+                key={`${link.name} ${index}`}
+                className={this.props.panel === link.name ? 'active-tab' : 'inactive-tab'}
+              >
+                <NavLink
+                  name={link.name}
+                  setPanel={this.props.setPanel}
+                  animate={this.props.animate && link.name === 'awards'}
+                  icon={link.icon}
+                />
+              </div>
+            )
+          })
         }
       </nav>
     )

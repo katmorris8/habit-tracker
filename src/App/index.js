@@ -102,7 +102,7 @@ class App extends Component {
   render() {
     // const opacity = 70;
     return (
-      <div className="App">
+      <div className="app">
         {/* <div className='swatches'>
           <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[0]}${opacity}`}}>0</div>
           <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[1]}${opacity}`}}>0</div>
@@ -115,22 +115,20 @@ class App extends Component {
         </div>
         <div className='main'>
           {this.state.currentPanel === 'habits' && (
-            <div>
-              <Habits
-                habits={this.state.habits}
-                counter={this.updateHabitCounter}
-                deleteHabit={this.deleteHabit}
-                confetti={this.state.confetti}
-                confettiConfig={confettiConfig}
-              />
-            </div>
+            <Habits
+              habits={this.state.habits}
+              counter={this.updateHabitCounter}
+              deleteHabit={this.deleteHabit}
+              confetti={this.state.confetti}
+              confettiConfig={confettiConfig}
+            />
           )}
           {this.state.currentPanel === 'create new' && (
             <HabitInput
-            habitInput={this.handleSubmit}
-            onChange={this.handleChange}
-            value={this.state.habitInput}
-          />
+              habitInput={this.handleSubmit}
+              onChange={this.handleChange}
+              value={this.state.habitInput}
+            />
           )}
           {this.state.currentPanel === 'awards' && (
             <Awards habits={this.state.habits} />

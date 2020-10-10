@@ -10,9 +10,12 @@ class NavLink extends Component {
           event.preventDefault();
           this.props.setPanel(this.props.name);
         }
-      }
-      >
-        <p className={this.props.animate ? 'shake-bottom' : ''}>{this.props.name}</p>
+      }>
+        <p className={this.props.animate ? 'shake-bottom' : ''}>
+          <i className={this.props.icon}></i>
+          <br></br>
+          {this.props.name}
+        </p>
       </button>
     )
   }

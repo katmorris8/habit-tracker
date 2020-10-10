@@ -115,11 +115,6 @@ class App extends Component {
         <div className='main'>
           {this.state.currentPanel === 'habits' && (
             <div>
-              {/* <HabitInput
-                habitInput={this.handleSubmit}
-                onChange={this.handleChange}
-                value={this.state.habitInput}
-              /> */}
               <Habits
                 habits={this.state.habits}
                 counter={this.updateHabitCounter}
@@ -128,6 +123,13 @@ class App extends Component {
                 confettiConfig={confettiConfig}
               />
             </div>
+          )}
+          {this.state.currentPanel === 'create new' && (
+            <HabitInput
+            habitInput={this.handleSubmit}
+            onChange={this.handleChange}
+            value={this.state.habitInput}
+          />
           )}
           {this.state.currentPanel === 'awards' && (
             <Awards habits={this.state.habits} />

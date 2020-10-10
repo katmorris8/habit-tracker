@@ -4,16 +4,16 @@
 }
 
 .nav-bar div {
-  width: 50%;
+  /* width: 50%; */
   text-align: center;
 }
 
 .active-tab {
-  border: 1px solid #333;
+  /* border: 1px solid #333;
   border-style: solid solid none solid;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0; */
 }
 
 .inactive-tab {
-  border-bottom: 1px solid #333;
+  /* border-bottom: 1px solid #333; */
 }

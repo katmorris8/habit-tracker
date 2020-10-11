@@ -1,7 +1,7 @@
 .counter-btn {
-  min-width: 60px;
-  height: 60px;
-  font-size: 18px;
+  min-width: 3.75rem;
+  height: 3.75rem;
+  font-size: 1.15rem;
   font-weight: bold;
   background-color: #DDAFFF;
   cursor: pointer;
@@ -9,14 +9,5 @@
   outline: none;
   border-radius: 50%;
   padding: 0;
-  margin-right: 20px;
-}
-
-@media only screen and (max-width: 480px) {
-  .counter-btn {
-    min-width: 12.5vw;
-    height: 12.5vw;
-    font-size: 3.75vw;
-    margin-right: 3.5vw;
-  }
+  margin-right: 1rem;
 }

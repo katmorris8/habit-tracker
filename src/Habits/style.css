@@ -1,7 +1,7 @@
 .habit {
   background-color: darkorchid;
   border-radius: 10px;
-  padding: .5rem;
+  padding: .75rem .5rem;
   margin: 1rem auto;
   list-style: none;
   display: flex;

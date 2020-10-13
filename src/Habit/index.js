@@ -8,6 +8,7 @@ class Habit extends Component {
       <div className="habit-info" id={this.props.id}>
         <HabitCountButton 
           click={this.props.counter} 
+          color={this.props.color}
           count={this.props.count} 
           confetti={this.props.confetti}
           confettiConfig={this.props.confettiConfig}

@@ -19,6 +19,8 @@ const confettiConfig = {
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
+let colorIndex = -1;
+
 const storedHabits = (item) => JSON.parse(localStorage.getItem(item));
 
 const setLocalStorage = (item, list) => localStorage.setItem(item, JSON.stringify(list));
@@ -36,6 +38,9 @@ class App extends Component {
   }
 
   setPanel = panel => {
+    if (panel === 'habits') {
+      this.setHabitColor()
+    }
     this.setState({
       currentPanel: panel,
     })
@@ -53,7 +58,8 @@ class App extends Component {
       text: this.state.habitInput,
       count: 0,
       awarded: false,
-      deleted: false
+      deleted: false,
+      color: ''
     }
     this.setState(prevState => {
       const habitList = [...prevState.habits];
@@ -99,17 +105,29 @@ class App extends Component {
     })
   }
 
+  habitColors = () => {
+    colorIndex++;
+    if (colorIndex >= confettiConfig.colors.length) {
+      colorIndex = 0;
+    }
+    return confettiConfig.colors[colorIndex];
+  }
+
+  setHabitColor = () => {
+    this.setState(prevState => {
+      const habitList = [...prevState.habits];
+      habitList.forEach(habit => habit.color = this.habitColors());
+      setLocalStorage('habits', habitList);
+      colorIndex = -1;
+      return ({
+        habits: habitList
+      })
+    })
+  }
+
   render() {
-    // const opacity = 70;
     return (
       <div className="app">
-        {/* <div className='swatches'>
-          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[0]}${opacity}`}}>0</div>
-          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[1]}${opacity}`}}>0</div>
-          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[2]}${opacity}`}}>0</div>
-          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[3]}${opacity}`}}>0</div>
-          <div className='swatch' style={{backgroundColor: `${confettiConfig.colors[4]}${opacity}`}}>0</div>
-        </div> */}
         <div className='header'>
           <h1>Habit Tracker</h1>
         </div>

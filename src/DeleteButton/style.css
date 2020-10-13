@@ -6,7 +6,7 @@
   margin: auto .1rem;
   width: 28px;
   height: 28px;
-  fill: darkgrey;
+  fill: #333;
   background: none;
   cursor: pointer;
   border: none;
@@ -14,5 +14,5 @@
 }
 
 .delete-btn:hover {
-  fill: #FB7C81;
+  fill: #ff718d;
 }

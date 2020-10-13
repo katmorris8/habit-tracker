@@ -4,7 +4,7 @@
   text-transform: capitalize;
   text-decoration: none;
   font-weight: bold;
-  color: #FB7C81;
+  color: #ff718d;
   background: none;
   cursor: pointer;
   border: none;
@@ -19,8 +19,8 @@
 .shake-bottom {
 	-webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
           animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   -webkit-animation-iteration-count: 3;
           animation-iteration-count: 3;
 }

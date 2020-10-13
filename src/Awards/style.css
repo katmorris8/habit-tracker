@@ -8,24 +8,26 @@
 }
 
 .award {
-  min-width: 30%;
   text-align: center;
   font-size: 90px;
-  padding: 16px;
-  margin: 0 auto;
+  padding: .5rem 1rem;
+  width: 50%;
+  
 }
 
 .awards p {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 481px) and (max-width: 800px) {
   .award {
-    font-size: 18.5vw;
-    padding: 3vw;
+    width: 33%;
   }
-  
-  .awards p {
-    font-size: 4vw;
+}
+
+@media only screen and (min-width: 801px) {
+  .award {
+    padding: .5rem 2rem;
+    width: 25%;
   }
 }

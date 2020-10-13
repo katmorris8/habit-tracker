@@ -9,12 +9,16 @@ class Habits extends Component {
       <div>
         <ul className='habits-list'>
         {this.props.habits.map((habit, index) => {
+          const style = {
+            backgroundColor: `${habit.color}60`
+          }
           return (
-            <li key={`${habit.text} ${index}`} className='habit' >
+            <li key={`${habit.text} ${index}`} className='habit' style={style} >
               <Habit 
                 key={habit.text}
                 id={index} 
-                habits={habit.text} 
+                habits={habit.text}
+                color={habit.color} 
                 count={habit.count} 
                 counter={() => this.props.counter(index)}
                 confetti={this.props.confetti}

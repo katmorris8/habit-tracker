@@ -7,7 +7,7 @@ class HabitInput extends Component {
       <form onSubmit={this.props.habitInput} >
         <input 
           className='habit-input' 
-          placeholder='new habit...' 
+          placeholder='enter new habit name' 
           onChange={this.props.onChange} 
           value={this.props.value} 
         />

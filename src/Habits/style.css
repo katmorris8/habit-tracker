@@ -10,3 +10,20 @@
 .habits-list {
   padding: 0;
 }
+
+.empty-habits-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty-habits-message p {
+  font-size: 1rem;
+}
+
+.empty-habits-message img {
+  width: 50%;
+  transform: rotate(132deg);
+}

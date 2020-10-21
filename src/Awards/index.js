@@ -17,7 +17,7 @@ class Awards extends Component {
           )
           })}
           {awarded.every(award => !award) && (
-            <p>It takes 21 days to form a habit. Come back when you've completed a habit at least 21 times!</p>
+            <p className='empty-awards-text'>It takes 21 days to form a habit. Come back when you've completed a habit at least 21 times!</p>
           )}
       </div>
     )

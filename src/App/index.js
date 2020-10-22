@@ -77,7 +77,7 @@ class App extends Component {
     this.setState(prevState => {
       const habitList = [...prevState.habits];
       habitList[index].count += 1;
-      if (habitList[index].count === 2) {
+      if (habitList[index].count === 21) {
         habitList[index].awarded = true;
         setLocalStorage('habits', habitList);
         return ({
